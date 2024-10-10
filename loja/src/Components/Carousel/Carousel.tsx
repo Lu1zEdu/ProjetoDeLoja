@@ -1,25 +1,9 @@
+"use client"; // Adicione esta linha no topo do arquivo
+// pages/_app.js
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 // components/Carousel.js
-"use client";
-
 import Slider from "react-slick";
-
-const NextArrow = (props: { onClick: unknown; }) => {
-    const { onClick } = props;
-    return (
-        <div className="arrow next" onClick={onClick}>
-            &#10095; {/* Unicode para a seta direita */}
-        </div>
-    );
-};
-
-const PrevArrow = (props: { onClick: unknown; }) => {
-    const { onClick } = props;
-    return (
-        <div className="arrow prev" onClick={onClick}>
-            &#10094; {/* Unicode para a seta esquerda */}
-        </div>
-    );
-};
 
 const Carousel = () => {
     const settings = {
@@ -27,9 +11,7 @@ const Carousel = () => {
         infinite: true,
         speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 1,
-        nextArrow: <NextArrow onClick={undefined} />,
-        prevArrow: <PrevArrow onClick={undefined} />
+        slidesToScroll: 1
     };
 
     return (

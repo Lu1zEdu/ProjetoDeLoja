@@ -24,7 +24,7 @@ export default function Headers() {
 
     const handleSearch = () => {
         const produtoEncontrado = produtos.find(produto => 
-            produto.name.toLowerCase() === query.toLowerCase()
+            produto.nome.toLowerCase() === query.toLowerCase()
         );
 
         if (produtoEncontrado) {
@@ -52,7 +52,7 @@ export default function Headers() {
                 <nav>
                     <ul>
                         <li><Link href='/'>Home</Link></li>
-                        <li><Link href='/routes/produtos'>Produtos</Link></li>
+                        <li><Link href='/routes/produto'>Produtos</Link></li>
                     </ul>
                 </nav>
                 <div style={{ margin: '20px' }}>

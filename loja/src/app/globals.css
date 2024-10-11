@@ -1,3 +1,77 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .login {
+        @apply flex flex-col items-center justify-center min-h-screen; 
+        
+        & h1 {
+            @apply text-5xl;
+        }
+
+        & form {
+            @apply border-2 border-black p-6 flex-col rounded-lg;
+
+            & div {
+                @apply flex flex-col;
+
+                & label {
+                    @apply text-2xl; 
+                }
+
+                & input {
+                    @apply border-2 border-black p-2 rounded;
+                }
+
+                & button {
+                    @apply bg-slate-400 text-white font-bold py-2 px-4 rounded mt-4 hover:bg-slate-500 transition duration-200;
+                }
+            }
+        }
+    }
+    
+    .Seta {
+        @apply text-5xl p-4;
+    }
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .login {
+        @apply flex flex-col items-center justify-center min-h-screen ; 
+        
+        & h1 {
+            @apply text-5xl p-4;
+        }
+
+        & form {
+            @apply flex border-2 border-black p-6 flex-col rounded-lg;
+
+            & div {
+                @apply flex flex-col;
+
+                & label {
+                    @apply text-2xl; 
+                }
+
+                & input {
+                    @apply border-2 border-black p-2 rounded;
+                }                
+            }
+            & button {
+                @apply  bg-slate-500 text-white font-bold py-2 px-4 rounded mt-4 hover:bg-slate-500 transition duration-200 self-center;
+            }
+        }
+    }
+    
+    .Seta {
+        @apply text-5xl p-4 w-min;
+    }
+    .Cadastro{
+        @apply text-2xl p-4 hover:underline hover:delay-500;
+    }
+}
+

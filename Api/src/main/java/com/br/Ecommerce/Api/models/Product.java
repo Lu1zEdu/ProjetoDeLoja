@@ -1,4 +1,5 @@
 package com.br.Ecommerce.Api.models;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import jdk.jfr.Category;
@@ -30,4 +31,6 @@ public class Product {
 
     @OneToMany(mappedBy = "product")
     private List<Assessment> assessments;
+
+    //public void
 }

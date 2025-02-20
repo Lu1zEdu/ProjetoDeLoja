@@ -1,6 +1,7 @@
 package com.br.Ecommerce.Api.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 
 
@@ -12,7 +13,7 @@ public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Size(min)
+    @Size(min= 11)
     private String cep;
     private String rua;
     private String numero;

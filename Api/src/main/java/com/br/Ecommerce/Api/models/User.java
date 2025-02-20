@@ -4,9 +4,7 @@ import com.vaadin.hilla.mappedtypes.Order;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.*;
-import org.springframework.security.access.annotation.Secured;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 

@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.core.annotation.Order;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 @Entity
 @Data
@@ -20,10 +21,43 @@ public class Payment {
     private String paymentMethod;
     private BigDecimal amount;
     private TypePayment typePayment;
-    private boolean paygamentVerification;
+    private boolean verificationPaygament;
+    private Date datePaygament;
 
     @OneToOne
     private Order order;
+
+    public void managerPayment(){
+        if(typePayment == TypePayment.PIX){
+            if (verificationPaygament == true ){
+
+            }else{
+                return;
+            }
+
+        }else if (typePayment == TypePayment.DEBITO) {
+            if (verificationPaygament == true){
+
+            }else{
+                return;
+            }
+        }else if (typePayment == TypePayment.CREDITO) {
+            if (verificationPaygament == true){
+
+            }else{
+                return;
+            }
+        }else if (typePayment == TypePayment.BOLETO) {
+            if (verificationPaygament == true){
+
+            }else {
+                return;
+            }
+
+        }else {
+            return;
+        }
+    }
 
 
 }

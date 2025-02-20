@@ -1,6 +1,6 @@
-package com.br.Ecommerce.Api.Models;
+package com.br.Ecommerce.Api.models;
 
-import com.br.Ecommerce.Api.Enum.TypePayment;
+import com.br.Ecommerce.Api.enums.TypePayment;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,7 +20,10 @@ public class Payment {
     private String paymentMethod;
     private BigDecimal amount;
     private TypePayment typePayment;
+    private boolean paygamentVerification;
 
     @OneToOne
     private Order order;
+
+
 }

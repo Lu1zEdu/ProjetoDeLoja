@@ -1,4 +1,4 @@
-package com.br.Ecommerce.Api.Models;
+package com.br.Ecommerce.Api.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

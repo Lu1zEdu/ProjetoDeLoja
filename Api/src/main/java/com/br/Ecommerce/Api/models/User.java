@@ -1,4 +1,4 @@
-package com.br.Ecommerce.Api.Models;
+package com.br.Ecommerce.Api.models;
 
 import com.vaadin.hilla.mappedtypes.Order;
 import jakarta.persistence.*;
@@ -34,4 +34,5 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private List<Order> orders;
+
 }

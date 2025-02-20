@@ -1,4 +1,4 @@
-package com.br.Ecommerce.Api.Enum;
+package com.br.Ecommerce.Api.enums;
 
 public enum OrderStatus {
     PENDING, SHIPPED, DELIVERED, CANCELED;

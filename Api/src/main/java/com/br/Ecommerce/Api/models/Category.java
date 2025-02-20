@@ -1,7 +1,8 @@
-package com.br.Ecommerce.Api.Models;
+package com.br.Ecommerce.Api.models;
 
 import jakarta.persistence.*;
 import lombok.*;
+import com.br.Ecommerce.Api.enums.TypeCategoty;
 
 @Entity
 @Data
@@ -11,6 +12,5 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-
+    private TypeCategoty typeCategoty;
 }

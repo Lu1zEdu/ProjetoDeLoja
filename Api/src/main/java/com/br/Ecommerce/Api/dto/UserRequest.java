@@ -1,7 +1,7 @@
-package com.br.Ecommerce.Api.Dto;
+package com.br.Ecommerce.Api.dto;
 
-import com.br.Ecommerce.Api.Models.Address;
-import com.vaadin.hilla.mappedtypes.Order;
+import com.br.Ecommerce.Api.models.Address;
+import com.br.Ecommerce.Api.models.Ordered;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -16,7 +16,7 @@ public class UserRequest {
     private String cpf;
     private String phone;
     private Address address;
-    private List<Order> orders;
+    private List<Ordered> orders;
 
     public String getFirstName() {
         return firstName;
@@ -82,11 +82,11 @@ public class UserRequest {
         this.address = address;
     }
 
-    public List<Order> getOrders() {
+    public List<Ordered> getOrders() {
         return orders;
     }
 
-    public void setOrders(List<Order> orders) {
+    public void setOrders(List<Ordered> orders) {
         this.orders = orders;
     }
 }

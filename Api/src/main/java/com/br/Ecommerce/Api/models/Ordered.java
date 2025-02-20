@@ -1,6 +1,6 @@
-package com.br.Ecommerce.Api.Models;
+package com.br.Ecommerce.Api.models;
 
-import com.br.Ecommerce.Api.Enum.OrderStatus;
+import com.br.Ecommerce.Api.enums.OrderStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

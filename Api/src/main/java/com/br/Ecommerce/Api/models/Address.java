@@ -1,4 +1,4 @@
-package com.br.Ecommerce.Api.Models;
+package com.br.Ecommerce.Api.models;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -12,6 +12,7 @@ public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Size(min)
     private String cep;
     private String rua;
     private String numero;

@@ -1,6 +1,6 @@
 package com.br.Ecommerce.Api.dto;
 
-import com.br.Ecommerce.Api.models.Assessment;
+import com.br.Ecommerce.Api.models.Review;
 import com.br.Ecommerce.Api.models.Category;
 
 import java.math.BigDecimal;
@@ -16,7 +16,7 @@ public class ProductRequest {
     private Boolean availability;
     private Integer discount;
     private Category category;
-    private List<Assessment> assessments;
+    private List<Review> assessments;
 
     public String getTitle() {
         return title;
@@ -90,11 +90,11 @@ public class ProductRequest {
         this.category = category;
     }
 
-    public List<Assessment> getAssessments() {
+    public List<Review> getAssessments() {
         return assessments;
     }
 
-    public void setAssessments(List<Assessment> assessments) {
+    public void setAssessments(List<Review> assessments) {
         this.assessments = assessments;
     }
 }

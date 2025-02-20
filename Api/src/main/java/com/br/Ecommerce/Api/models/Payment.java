@@ -2,62 +2,70 @@ package com.br.Ecommerce.Api.models;
 
 import com.br.Ecommerce.Api.enums.TypePayment;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.core.annotation.Order;
+import lombok.*;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDateTime;
 
+/**
+ * Representa um pagamento realizado para um pedido.
+ */
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Payment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String paymentMethod;
-    private BigDecimal amount;
-    private TypePayment typePayment;
-    private boolean verificationPaygament;
-    private Date datePaygament;
 
+    // Campo opcional para descrever o método de pagamento.
+    private String paymentMethod;
+
+    // Valor pago.
+    private BigDecimal amount;
+
+    // Tipo de pagamento (PIX, BOLETO, CREDITO, DEBITO).
+    @Enumerated(EnumType.STRING)
+    private TypePayment typePayment;
+
+    // Indica se o pagamento foi verificado.
+    private boolean verified;
+
+    // Data e hora em que o pagamento foi realizado.
+    private LocalDateTime paymentDate;
+
+    // Pedido associado a este pagamento.
     @OneToOne
+    @JoinColumn(name = "order_id", referencedColumnName = "id")
     private Order order;
 
-    public void managerPayment(){
-        if(typePayment == TypePayment.PIX){
-            if (verificationPaygament == true ){
-
-            }else{
-                return;
-            }
-
-        }else if (typePayment == TypePayment.DEBITO) {
-            if (verificationPaygament == true){
-
-            }else{
-                return;
-            }
-        }else if (typePayment == TypePayment.CREDITO) {
-            if (verificationPaygament == true){
-
-            }else{
-                return;
-            }
-        }else if (typePayment == TypePayment.BOLETO) {
-            if (verificationPaygament == true){
-
-            }else {
-                return;
-            }
-
-        }else {
+    /**
+     * Processa o pagamento.
+     * Este método pode ser expandido para integrar com gateways de pagamento externos.
+     */
+    public void processPayment() {
+        if (!verified) {
+            System.out.println("Pagamento não verificado. Processamento cancelado.");
             return;
         }
+
+        switch (typePayment) {
+            case PIX:
+                System.out.println("Processando pagamento via PIX...");
+                break;
+            case DEBITO:
+                System.out.println("Processando pagamento via Débito...");
+                break;
+            case CREDITO:
+                System.out.println("Processando pagamento via Crédito...");
+                break;
+            case BOLETO:
+                System.out.println("Processando pagamento via Boleto...");
+                break;
+            default:
+                System.out.println("Tipo de pagamento inválido.");
+        }
     }
-
-
 }

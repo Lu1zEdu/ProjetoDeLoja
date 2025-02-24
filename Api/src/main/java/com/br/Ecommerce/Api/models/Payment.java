@@ -36,6 +36,7 @@ public class Payment {
     // Data e hora em que o pagamento foi realizado.
     private LocalDateTime paymentDate;
 
+
     // Pedido associado a este pagamento.
     @OneToOne
     @JoinColumn(name = "order_id", referencedColumnName = "id")

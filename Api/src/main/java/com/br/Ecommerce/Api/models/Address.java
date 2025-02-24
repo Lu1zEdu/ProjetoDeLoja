@@ -20,7 +20,7 @@ public class Address {
     // CEP - código postal, geralmente com 8 caracteres no Brasil.
     @NotBlank
     @Size(min = 8, max = 8, message = "O CEP deve conter 8 caracteres")
-    private String cep;
+    private int cep;
 
     // Nome da rua.
     private String street;

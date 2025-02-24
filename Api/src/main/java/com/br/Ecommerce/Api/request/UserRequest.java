@@ -1,5 +1,6 @@
-package com.br.Ecommerce.Api.dto;
+package com.br.Ecommerce.Api.request;
 
+import com.br.Ecommerce.Api.enums.TypeUser;
 import com.br.Ecommerce.Api.models.Address;
 import com.br.Ecommerce.Api.models.Order;
 
@@ -17,6 +18,7 @@ public class UserRequest {
     private String phone;
     private Address address;
     private List<Order> orders;
+    private TypeUser typeUser;
 
     public String getFirstName() {
         return firstName;
@@ -88,5 +90,13 @@ public class UserRequest {
 
     public void setOrders(List<Order> orders) {
         this.orders = orders;
+    }
+
+    public TypeUser getTypeUser() {
+        return typeUser;
+    }
+
+    public void setTypeUser(TypeUser typeUser) {
+        this.typeUser = typeUser;
     }
 }

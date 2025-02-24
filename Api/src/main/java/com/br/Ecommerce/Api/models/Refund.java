@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Refund {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -32,4 +33,12 @@ public class Refund {
 
     // Data e hora em que o reembolso foi solicitado.
     private LocalDateTime requestDate;
+
+    // Motivo do reembolso.
+    private String refundReason;
+
+    // Associando o reembolso a um pagamento específico.
+    @ManyToOne
+    @JoinColumn(name = "payment_id", referencedColumnName = "id")
+    private Payment payment;
 }

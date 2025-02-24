@@ -27,4 +27,20 @@ public class Category {
     // Lista de produtos associados a esta categoria.
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Product> products = new ArrayList<>();
+
+    /**
+     * Adiciona um produto à categoria.
+     * @param product Produto a ser adicionado.
+     */
+    public void addProduct(Product product) {
+        products.add(product);
+    }
+
+    /**
+     * Lista todos os produtos da categoria.
+     */
+    public void listProducts() {
+        products.forEach(System.out::println);
+    }
 }
+

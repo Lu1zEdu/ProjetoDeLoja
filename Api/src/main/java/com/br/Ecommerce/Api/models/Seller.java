@@ -22,7 +22,7 @@ public class Seller {
     private String storeName;
 
     // Número de identificação fiscal (por exemplo, CNPJ).
-    private String cnpj;
+    private int cnpj;
 
     // E-mail do vendedor.
     private String email;
@@ -33,4 +33,11 @@ public class Seller {
     // Lista de produtos oferecidos pelo vendedor.
     @OneToMany(mappedBy = "seller", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Product> products = new ArrayList<>();
+
+    public void addProduct(Product product){
+        products.add(product);
+    }
+    public void listProduct(){
+        products.forEach(System.out :: println);
+    }
 }

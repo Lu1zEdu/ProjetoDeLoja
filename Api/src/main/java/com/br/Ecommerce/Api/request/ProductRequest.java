@@ -1,9 +1,11 @@
-package com.br.Ecommerce.Api.dto;
+package com.br.Ecommerce.Api.request;
 
 import com.br.Ecommerce.Api.models.Review;
 import com.br.Ecommerce.Api.models.Category;
+import com.br.Ecommerce.Api.models.Seller;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductRequest {
@@ -14,7 +16,10 @@ public class ProductRequest {
     private String brand;
     private Integer stock;
     private Boolean availability;
+    private String sku;
+    private List<String> images = new ArrayList<>();
     private Integer discount;
+    private Seller seller;
     private Category category;
     private List<Review> assessments;
 
@@ -74,12 +79,36 @@ public class ProductRequest {
         this.availability = availability;
     }
 
+    public String getSku() {
+        return sku;
+    }
+
+    public void setSku(String sku) {
+        this.sku = sku;
+    }
+
+    public List<String> getImages() {
+        return images;
+    }
+
+    public void setImages(List<String> images) {
+        this.images = images;
+    }
+
     public Integer getDiscount() {
         return discount;
     }
 
     public void setDiscount(Integer discount) {
         this.discount = discount;
+    }
+
+    public Seller getSeller() {
+        return seller;
+    }
+
+    public void setSeller(Seller seller) {
+        this.seller = seller;
     }
 
     public Category getCategory() {

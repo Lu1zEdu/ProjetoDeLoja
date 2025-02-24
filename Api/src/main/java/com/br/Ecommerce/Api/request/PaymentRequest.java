@@ -1,4 +1,4 @@
-package com.br.Ecommerce.Api.dto;
+package com.br.Ecommerce.Api.request;
 
 import com.br.Ecommerce.Api.enums.TypePayment;
 

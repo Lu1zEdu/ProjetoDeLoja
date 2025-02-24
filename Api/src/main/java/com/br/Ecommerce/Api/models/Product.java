@@ -80,4 +80,19 @@ public class Product {
     public void listReviews() {
         reviews.forEach(System.out::println);
     }
+
+    /**
+     * Adiciona uma imagem ao produto.
+     * @param image A URL da imagem a ser adicionada.
+     */
+    public void addImage(String image){
+        images.add(image);
+    }
+
+    /**
+     * Exibe todas as imagens do produto.
+     */
+    public void listImages() {
+        images.forEach(System.out::println);
+    }
 }

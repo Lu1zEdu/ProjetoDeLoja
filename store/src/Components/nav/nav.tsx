@@ -25,7 +25,7 @@ export default function Nav(){
                 <div className='flex gap-2 self-center'>
                     <li><Link href='/routes/login'>Login</Link></li>
                     <span>|</span>
-                    <li><Link href='/route/cadastro'>Cadastro</Link></li>
+                    <li><Link href='/routes/cadastro'>Cadastro</Link></li>
                 </div>
             </ul>
         </nav>
